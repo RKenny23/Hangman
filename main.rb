@@ -1,8 +1,7 @@
 require 'yaml'
 
 class Hangman
-  attr_accessor :word, :board, :lives, :guesses
-
+  
   def initialize
     @letters = ('a'..'z').to_a
     @word = get_word

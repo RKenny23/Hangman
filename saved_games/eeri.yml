@@ -26,7 +26,13 @@ letters:
 - x
 - y
 - z
-word: unrelenting
-board: '_ _ _ _ _ _ _ _ _ _ _ '
-lives: 9
-guesses: []
+word: leerily
+board: _ e e r i _ _
+lives: 6
+guesses:
+- a
+- e
+- r
+- u
+- i
+- o
