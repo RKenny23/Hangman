@@ -1,7 +1,7 @@
 require 'yaml'
 
 class Hangman
-  
+
   def initialize
     @letters = ('a'..'z').to_a
     @word = get_word
@@ -47,7 +47,6 @@ class Hangman
     make_guess
   end
 
-
   def print_board(last_guess = nil)
     update_board(last_guess) unless last_guess.nil?
     puts "So far, you've tried: #{@guesses.join(', ')}"
@@ -58,7 +57,6 @@ class Hangman
     new_board = @board.split
 
     new_board.each_with_index do |letter, index|
-      # replace underscores with letter if matches letter in word
       if letter == '_' && @word[index] == last_guess
         new_board[index] = last_guess
       end
@@ -166,12 +164,11 @@ class Hangman
       load_file = gets.chomp
       return load_file if games.include?(load_file)
 
-      puts 'The game you requested does not exist.'
+      puts "The game you requested does not exist."
     end
   end
 
   def deserialize(load_file)
-    # yaml = YAML.load("./saved_games/#{load_file}.yml")
     yaml = 
       File.open("./saved_games/#{load_file}.yml") do |f| 
         YAML.load(f)
