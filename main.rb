@@ -16,7 +16,7 @@ class Hangman
   
   def get_word
     clean_words = []
-    lines = File.readlines("5desk.txt")
+    lines = File.readlines('5desk.txt')
 
     lines.each do |line| 
       line.gsub!(/\r\n?/, '')
@@ -115,6 +115,7 @@ class Hangman
     puts "\n", "Play again? y/n: "
     choice = gets.chomp.downcase
     if choice == 'n'
+      puts "Thanks for playing!"
       exit
     elsif choice == 'y'
       initialize
@@ -127,13 +128,13 @@ class Hangman
     saved_games = Dir.glob('saved_games/*')
 
     loop do
-      puts 'Enter name of your save file: '
+      puts "Enter name of your save file: "
       filename = gets.chomp
-      if saved_games.include?("saved_games/#{filename}.yml")
+      if saved_games.include?('saved_games/#{filename}.yml')
         puts "\n," "File aready exists!"
         next
       else
-        File.open("./saved_games/#{filename}.yml", 'w') do |file| 
+        File.open('./saved_games/#{filename}.yml', 'w') do |file| 
           file.write(YAML.dump(self))
         end
         puts "Game saved!"
@@ -144,12 +145,12 @@ class Hangman
   
   def saved_games
     puts "\n", "Saved games: "
-    Dir["./saved_games/*"].map { |file| file.split('/')[-1].split('.')[0] }
+    Dir['./saved_games/*'].map { |file| file.split('/')[-1].split('.')[0] }
   end
 
   def load_game
     unless Dir.exist?('saved_games')
-      puts 'No saved games found. Starting new game...'
+      puts "No saved games found. Starting new game..."
       sleep(1)
       start_game
     end
@@ -169,7 +170,7 @@ class Hangman
   end
 
   def deserialize(load_file)
-    yaml = 
+    yaml = #quotes here fail if they are single?
       File.open("./saved_games/#{load_file}.yml") do |f| 
         YAML.load(f)
       end
