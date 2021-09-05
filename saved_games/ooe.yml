@@ -1,0 +1,40 @@
+--- !ruby/object:Hangman
+letters:
+- a
+- b
+- c
+- d
+- e
+- f
+- g
+- h
+- i
+- j
+- k
+- l
+- m
+- n
+- o
+- p
+- q
+- r
+- s
+- t
+- u
+- v
+- w
+- x
+- y
+- z
+word: snowshoe
+board: _ _ o _ _ _ o e
+lives: 3
+guesses:
+- a
+- e
+- r
+- t
+- y
+- i
+- k
+- o

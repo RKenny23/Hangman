@@ -1,0 +1,36 @@
+--- !ruby/object:Hangman
+letters:
+- a
+- b
+- c
+- d
+- e
+- f
+- g
+- h
+- i
+- j
+- k
+- l
+- m
+- n
+- o
+- p
+- q
+- r
+- s
+- t
+- u
+- v
+- w
+- x
+- y
+- z
+word: sawyer
+board: _ _ w _ _ r
+lives: 7
+guesses:
+- w
+- q
+- r
+- t
