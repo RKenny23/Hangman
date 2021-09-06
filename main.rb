@@ -130,11 +130,11 @@ class Hangman
     loop do
       puts "Enter name of your save file: "
       filename = gets.chomp
-      if saved_games.include?('saved_games/#{filename}.yml')
-        puts "\n," "File aready exists!"
+      if saved_games.include?("saved_games/#{filename}.yml")
+        puts "\n", "File aready exists!"
         next
       else
-        File.open('./saved_games/#{filename}.yml', 'w') do |file| 
+        File.open("./saved_games/#{filename}.yml", 'w') do |file| 
           file.write(YAML.dump(self))
         end
         puts "Game saved!"
@@ -170,7 +170,7 @@ class Hangman
   end
 
   def deserialize(load_file)
-    yaml = #quotes here fail if they are single?
+    yaml =
       File.open("./saved_games/#{load_file}.yml") do |f| 
         YAML.load(f)
       end

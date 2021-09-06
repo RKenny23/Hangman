@@ -26,18 +26,11 @@ letters:
 - x
 - y
 - z
-word: polymathy
-board: _ _ _ _ _ a _ h _
-lives: 1
+word: continuity
+board: _ _ _ _ _ _ _ _ _ _
+lives: 5
 guesses:
-- e
-- q
+- d
 - f
 - g
 - h
-- j
-- u
-- d
-- s
-- a
-- ''
